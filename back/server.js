@@ -5,7 +5,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 const cors = require('cors');
 
-const routes_setter =  () => require('./config/routes.js');
+const routes_setter = require('./config/routes.js');
 app.use(cors())
 routes_setter(app);
 app.listen(9000);

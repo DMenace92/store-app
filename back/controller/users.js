@@ -1,8 +1,11 @@
 const User = require('../models/users');
-module.exprots = {
+const jwt = require("jsonwebtoken")
+const secret = process.env.JWT_SECRET || "donuts";
+module.exports = {
    
    
     index:(req,res)=>{
+        
     User.find().exec((err,users)=>{
         res.json(users);
     })
@@ -38,7 +41,7 @@ module.exprots = {
             username: req.body.username,
             password: req.body.password,
         }
-        user.create(userData, function(err,user){
+        user.create(userData, function(err,users){
             if(err){
                 return next(err)
             } else{

@@ -2,14 +2,14 @@ const users = require('../controller/users')
 const jwt = require("jsonwebtoken")
 const secret = process.env.JWT_SECRET || "donuts";
 
-module.export = function(app){
+module.exports = function(app){
 //USERS_______________________________________________________________-
 app.get('/users',users.index);
 app.post('/login', users.login);
 app.post('/register',users.register);
 
 //AUTH_______________________________________________________________
-app.use(jwtAuth)
+// app.use(jwtAuth)
 
 
 //USERS after auth_____________________________________________________
